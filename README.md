@@ -2,7 +2,69 @@
 
 ## Clase 1 - Programación concurrente
 
-Ejercicios
+🔹 Introducción
+
+1. ¿Qué es la programación concurrente?
+
+Definición: Paradigma donde múltiples tareas (procesos o hilos) progresan de forma solapada.
+
+No implica siempre ejecución simultánea física, salvo en sistemas multinúcleo.
+
+Objetivo: eficiencia y respuesta más rápida en aplicaciones que realizan varias tareas (ej.: servidores web, simulaciones, juegos en red).
+
+🔹 Ejemplo intuitivo:
+Un restaurante con un solo cocinero (CPU de un núcleo). Este puede ir alternando entre preparar entradas, plato principal y postre sin terminar uno antes de empezar el otro → concurrencia.
+Si hay varios cocineros (CPU multinúcleo), realmente trabajan en paralelo → paralelismo.
+
+2. Hilos vs procesos
+
+![alt text](tabla-hilos-y-procesos.png)
+
+3. Problemas de concurrencia y sincronización
+
+La concurrencia trae riesgos:
+
+Condiciones de carrera (race conditions): cuando dos hilos acceden y modifican la misma variable al mismo tiempo → resultados impredecibles.
+
+Interbloqueo (deadlock): dos hilos esperan recursos bloqueados mutuamente → ninguno avanza.
+
+Inanición (starvation): un hilo nunca obtiene tiempo de CPU.
+
+🔧 Mecanismos de control en Python:
+
+Lock (bloqueos mutuos).
+
+Semaphore (control de acceso a recursos limitados).
+
+Condition (coordinar hilos: esperar y notificar).
+
+Event (señales entre hilos).
+
+4. Ejercicios prácticos (del PDF)
+
+Ejercicio 1: Contar en paralelo (dos hilos, 1–5 y 6–10).
+
+Ejercicio 2: Sincronización con Condition: esperar a que ambos hilos terminen antes de imprimir el resultado final.
+
+💡 Estos ejercicios preparan para aplicaciones reales como servidores concurrentes que atienden múltiples clientes.
+
+5. Glosario
+
+Concurrencia: Ejecución solapada de tareas.
+
+Paralelismo: Ejecución real al mismo tiempo (varios núcleos).
+
+Proceso: Programa en ejecución con memoria propia.
+
+Hilo (thread): Unidad de ejecución dentro de un proceso.
+
+Race condition: Conflicto por acceso concurrente a recursos.
+
+Deadlock: Bloqueo mutuo entre procesos o hilos.
+
+Sincronización: Técnicas para coordinar la ejecución concurrente.
+
+🔹 Ejercicios
 
 Mejorar el código presentado:
 
