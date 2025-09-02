@@ -141,3 +141,44 @@ IPC (Inter-Process Communication): mecanismos de comunicación entre procesos.
 Mapa conceptal: Procesos vs Hilos
 
 ![alt text](Procesos-vs-hilos.png)
+
+
+# PFO1 – Chat básico cliente/servidor con sockets y SQLite
+
+Este proyecto implementa un **chat simple cliente–servidor** en Python utilizando **sockets TCP** y **SQLite** para almacenamiento de mensajes.  
+El objetivo es aprender a configurar un servidor que reciba mensajes de clientes, los guarde en una base de datos y envíe confirmaciones, aplicando buenas prácticas de modularización y manejo de errores.
+
+---
+
+## 📂 Estructura del proyecto
+
+- [`server.py`](https://github.com/mgmaxi/TDS-Programacion-Sobre-Redes/blob/main/PFO1/server.py)  
+  Servidor que escucha en `localhost:5000`, recibe mensajes, los almacena en `mensajes.db` y responde con confirmación.
+
+- [`client.py`](https://github.com/mgmaxi/TDS-Programacion-Sobre-Redes/blob/main/PFO1/client.py)  
+  Cliente que se conecta al servidor y permite enviar múltiples mensajes hasta escribir `éxito`.
+
+- [`mensajes.db`](https://github.com/mgmaxi/TDS-Programacion-Sobre-Redes/blob/main/PFO1/mensajes.db)  
+  Base de datos SQLite donde se almacenan los mensajes (`id, contenido, fecha_envio, ip_cliente`).
+
+---
+
+## 🚀 Ejecución
+
+1. **Clonar el repositorio**:
+ ```
+   git clone https://github.com/mgmaxi/TDS-Programacion-Sobre-Redes.git
+   cd TDS-Programacion-Sobre-Redes/PFO1
+```
+2. **Ejecutar el servidor**:
+```python
+python server.py
+```
+3. **Ejecutar el cliente**:
+```python
+python client.py
+```
+4. **Consultar la base de datos**
+```
+sqlite3 mensajes.db
+```
